@@ -23,13 +23,14 @@ const Service = sequelize.define<ServiceModelInterface>(
       allowNull: false,
     },
     duration: {
-      type: Sequelize.STRING,
+      type: Sequelize.INTEGER,
       allowNull: false,
     },
   },
   {
-    // timestamps: true,
-    paranoid: true,
+    // The services table migration does not define timestamp columns.
+    timestamps: false,
+    paranoid: false,
     underscored: true,
   },
 );

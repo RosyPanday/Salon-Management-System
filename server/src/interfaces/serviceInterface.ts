@@ -5,7 +5,7 @@ export interface ServiceInterface {
   id?: number;
   serviceName: string;
   price: number;
-  duration: string;
+  duration: number;
 }
 
 export interface ServiceModelInterface

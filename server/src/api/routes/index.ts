@@ -1,8 +1,8 @@
 import { Router } from "express";
-import productRoutes from "./serviceRoutes.js";
+import serviceRoutes from "./serviceRoutes.js";
 
 const routes = Router();
 
-routes.use("/product", productRoutes);
+routes.use("/services", serviceRoutes);
 
 export default routes;
