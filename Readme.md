@@ -30,4 +30,4 @@ frontend : api integration for both salon and appointment management completed
 
 # unfinished/left
 
-frontend: proper designing left, (deleting)  is shown in all appointments while deleting one appointment but everything isnt deleted actually .bug during appointment deleting
+frontend: proper designing left, filtering appointments based on status left 
