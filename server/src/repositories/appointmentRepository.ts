@@ -14,7 +14,17 @@ export class AppointmentRepository extends BaseRepository<
     return this.findByPk(id);
   }
 
-  public async editService(
+  public async getAppointments(): Promise<AppointmentInterface[]> {
+    return this.findAll({ raw: true });
+  }
+
+  public async addAppointment(
+    appointmentData: AppointmentInterface,
+  ): Promise<void> {
+    await this.create(appointmentData);
+  }
+
+  public async editAppointment(
     id: number,
     appointmentData: Partial<AppointmentInterface>,
   ): Promise<[number]> {
