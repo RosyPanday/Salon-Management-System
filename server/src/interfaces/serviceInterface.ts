@@ -1,4 +1,3 @@
-import "multer";
 import * as Sequelize from "sequelize";
 
 export interface ServiceInterface {
