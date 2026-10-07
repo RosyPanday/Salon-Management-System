@@ -23,11 +23,6 @@ export class Server {
   private setUpMiddleware() {
     this.app.use(cors<cors.CorsRequest>({ origin: corsWhiteList }));
     this.app.use(express.json());
-
-    this.app.use(
-      "/uploads",
-      express.static(path.join(process.cwd(), "uploads")),
-    );
   }
 
   public async start() {
