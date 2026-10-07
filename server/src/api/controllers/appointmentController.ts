@@ -1,8 +1,8 @@
 import { SalonService } from "#src/services/salonService.js";
 import type { NextFunction, Request, Response } from "express";
 
-export class ServiceController {
-  public static addService = async (
+export class AppointmentController {
+  public static addAppointment = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -18,7 +18,7 @@ export class ServiceController {
     }
   };
 
-  public static viewService = async (
+  public static viewAppointment = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -33,22 +33,8 @@ export class ServiceController {
     }
   };
 
-    public static viewSingleService = async (
-    req: Request,
-    res: Response,
-    next: NextFunction,
-  ): Promise<void> => {
-    try {
-      const service = await new SalonService().getSingleService(Number(req.params.id));
-      res.status(200).json({ service });
-    } catch (error) {
-      if(error instanceof Error){
-        res.status(404).json({ message: error.message });
-      }
-    }
-  }; 
-
-  public static editService = async (
+ 
+  public static editAppointment = async (
     req: Request,
     res: Response,
     next: NextFunction,
@@ -65,7 +51,7 @@ export class ServiceController {
     }
   };
 
-  public static deleteService = async (
+  public static deleteAppointment = async (
     req: Request,
     res: Response,
     next: NextFunction,

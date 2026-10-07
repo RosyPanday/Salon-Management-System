@@ -1,7 +1,9 @@
 import Service from "./services.js";
+import Appointment from "./appointments.js";
 
 const Model = {
-  Service
+  Service,
+  Appointment,
 };
 
 export default Model;
