@@ -1,0 +1,45 @@
+{
+  "name": "tailpanelbackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "imports": {
+    "#src/*": "./dist/*"
+  },
+  "scripts": {
+    "build": "npx tsc && tsc-alias",
+    "build:watch": "tsc --watch",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RosyPanday/tailpanel-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/RosyPanday/tailpanel-backend/issues"
+  },
+  "homepage": "https://github.com/RosyPanday/tailpanel-backend#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.6.2",
+    "sequelize-cli": "^6.6.5"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.3",
+    "express": "^5.2.1",
+    "multer": "^2.4.0",
+    "pg": "^8.23.0",
+    "sequelize": "^6.37.8",
+    "tsc-alias": "^1.9.5",
+    "typescript": "^7.0.2"
+  }
+}
