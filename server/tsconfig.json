@@ -49,5 +49,5 @@
     "src/**/*",
     "config.cjs",
     "src/migrations/*.js"
-, "migrations/20260925064156-create-products.js", "models/product.ts"  ]
+,   ]
 }

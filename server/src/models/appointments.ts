@@ -1,7 +1,7 @@
 import * as Sequelize from "sequelize";
 
 import { Database } from "#src/database/connection.js";
-import type { AppointmentModelInterface } from "#src/interfaces/AppointmentInterface.js";
+import type { AppointmentModelInterface } from "#src/interfaces/appointmentInterface.js";
 
 
 const sequelize = Database.sequelize;

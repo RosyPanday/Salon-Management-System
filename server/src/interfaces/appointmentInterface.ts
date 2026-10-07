@@ -8,6 +8,7 @@ export interface AppointmentAttributes {
   appointmentDate: string;
   appointmentTime: string;
   notes?: string | null;
+  status?: "pending" | "processing" | "completed";
 }
 
 export interface AppointmentModelInterface
