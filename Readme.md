@@ -26,9 +26,8 @@ backend: express, node, sequelize ORM, supabase db, singleton database pattern, 
 # completed features
 
 backend: full crud of salon service management as well as appointment management completed
-frontend : api integration for salon service management, add ,edit, delete ,read salon services api completed
+frontend : api integration for both salon and appointment management completed
 
 # unfinished/left
 
-frontend: ongoing appointment create api integration, api integration for read, update/patch api unfinished
-backend: complete
+frontend: proper designing left, (deleting)  is shown in all appointments while deleting one appointment but everything isnt deleted actually .bug during appointment deleting

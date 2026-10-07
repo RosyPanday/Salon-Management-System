@@ -1,5 +1,4 @@
-import type { AppointmentStatusEnum } from "#src/interfaces/appointmentInterface.js";
-import type { AppointmentInterface } from "#src/interfaces/AppointmentInterface.js";
+import type { AppointmentAttributes } from "#src/interfaces/appointmentInterface.js";
 import { AppointmentRepository } from "#src/repositories/appointmentRepository.js";
 
 export class AppointmentService {
@@ -9,21 +8,19 @@ export class AppointmentService {
     this.appointmentRepository = new AppointmentRepository();
   }
 
-  public async getAppointments(
-    status: AppointmentStatusEnum,
-  ): Promise<AppointmentInterface[]> {
-    return this.appointmentRepository.findAll({ where: { status: status } });
+  public async getAppointments(): Promise<AppointmentAttributes[]> {
+    return this.appointmentRepository.findAll({raw:true});
   }
 
   public async addAppointment(
-    appointmentData: AppointmentInterface,
+    appointmentData: AppointmentAttributes,
   ): Promise<void> {
     await this.appointmentRepository.create(appointmentData);
   }
 
   public async editAppointment(
     id: number,
-    appointmentData: Partial<AppointmentInterface>,
+    appointmentData: Partial<AppointmentAttributes>,
   ): Promise<[number]> {
     return this.appointmentRepository.update({
       where: { id },

@@ -1,4 +1,4 @@
-import type { AppointmentStatusEnum } from "#src/interfaces/appointmentInterface.js";
+import { AppointmentStatusEnum } from "#src/interfaces/appointmentInterface.js";
 import { AppointmentService } from "#src/services/appointmentService.js";
 import type { NextFunction, Request, Response } from "express";
 
@@ -39,8 +39,7 @@ export class AppointmentController {
     next: NextFunction,
   ): Promise<void> => {
     try {
-      const { status } = req.query;
-      const appointments = await new AppointmentService().getAppointments(status as AppointmentStatusEnum);
+      const appointments = await new AppointmentService().getAppointments();
       res.status(200).json({ appointments });
     } catch (error) {
       if(error instanceof Error){
@@ -57,10 +56,15 @@ export class AppointmentController {
   ): Promise<void> => {
     try {
       const id = Number(req.params.id);
-      const appointmentData = req.body;
+      const { status } = req.body;
+      const allowedStatuses = Object.values(AppointmentStatusEnum);
+      if (!allowedStatuses.includes(status)) {
+        res.status(400).json({ message: "Invalid appointment status" });
+        return;
+      }
       const [updatedCount] = await new AppointmentService().editAppointment(
         id,
-        appointmentData,
+        { status },
       );
       res.status(200).json({
         message: updatedCount > 0 ? "Appointment successfully updated" : "Appointment not found",

@@ -1,10 +1,10 @@
 import * as Sequelize from "sequelize";
 
 export enum AppointmentStatusEnum {
-  Pending = "Pending",
-  Confirmed = "Confirmed",
-  Completed = "Completed",
-  Cancelled = "Cancelled",
+  Pending = "pending",
+  Confirmed = "confirmed",
+  Completed = "completed",
+  Cancelled = "cancelled",
 }
 
 export interface AppointmentAttributes {
