@@ -1,3 +1,4 @@
+import type { AppointmentStatusEnum } from "#src/interfaces/appointmentInterface.js";
 import { AppointmentService } from "#src/services/appointmentService.js";
 import type { NextFunction, Request, Response } from "express";
 
@@ -38,7 +39,8 @@ export class AppointmentController {
     next: NextFunction,
   ): Promise<void> => {
     try {
-      const appointments = await new AppointmentService().getAppointments();
+      const { status } = req.query;
+      const appointments = await new AppointmentService().getAppointments(status as AppointmentStatusEnum);
       res.status(200).json({ appointments });
     } catch (error) {
       if(error instanceof Error){

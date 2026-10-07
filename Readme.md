@@ -30,4 +30,5 @@ frontend : api integration for salon service management, add ,edit, delete ,read
 
 # unfinished/left
 
-frontend: ongoing appointment create api integration, left the integrated read, update/patch api
+frontend: ongoing appointment create api integration, api integration for read, update/patch api unfinished
+backend: complete

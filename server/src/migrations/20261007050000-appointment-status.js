@@ -4,7 +4,7 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.addColumn("appointments", "status", {
-      type: Sequelize.STRING,
+      type: Sequelize.ENUM("pending", "confirmed", "completed", "cancelled"),
       allowNull: false,
       defaultValue: "pending",
     });
