@@ -1,9 +1,7 @@
-import Invoice from "./invoices.js";
-import Product from "./services.js";
+import Service from "./services.js";
 
 const Model = {
-  Product,
-  Invoice
+  Service
 };
 
 export default Model;

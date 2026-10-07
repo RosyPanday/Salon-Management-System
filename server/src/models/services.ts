@@ -1,10 +1,11 @@
 import * as Sequelize from "sequelize";
 
 import { Database } from "#src/database/connection.js";
+import type { ServiceModelInterface } from "#src/interfaces/serviceInterface.js";
 
 const sequelize = Database.sequelize;
 const Service = sequelize.define<ServiceModelInterface>(
-  "products",
+  "services",
   {
     id: {
       type: Sequelize.INTEGER,
@@ -12,10 +13,22 @@ const Service = sequelize.define<ServiceModelInterface>(
       autoIncrement: true,
       primaryKey: true,
     },
-   
+    serviceName: {
+      type: Sequelize.STRING,
+      allowNull: false,
+      field: "service_name"
+    },
+    price: {
+      type: Sequelize.DECIMAL(10, 2),
+      allowNull: false,
+    },
+    duration: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
   },
   {
-    timestamps: true,
+    // timestamps: true,
     paranoid: true,
     underscored: true,
   },
